@@ -6,7 +6,7 @@ from typing import List, Dict
 def read(path: str) -> List[Dict]:
     """Reads a file from a given path and returns its contents
 
-    Parameters
+    Parameter
     ----------
     path : str
         Full path to file
