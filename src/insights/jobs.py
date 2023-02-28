@@ -27,7 +27,7 @@ def get_unique_job_types(path: str) -> List[str]:
 
     return types_list
 
+
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
     jobs_by_type = [job for job in jobs if job["job_type"] == job_type]
     return jobs_by_type
-
