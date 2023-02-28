@@ -24,10 +24,10 @@ def get_unique_job_types(path: str) -> List[str]:
 
     for job in jobs:
         types_list.add(job["job_type"])
-    
+
     return types_list
 
-
-
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
-    jobs_by_type = []
+    jobs_by_type = [job for job in jobs if job["job_type"]== job_type]
+    return jobs_by_type
+
