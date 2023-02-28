@@ -6,35 +6,27 @@ import csv
 @lru_cache
 def read(path: str) -> List[Dict]:
     with open(path, encoding="utf-8") as file:
+        
+        jobs_file = csv.DictReader(file)
 
-    jobs_file = csv.DictReader(file)
+        jobs_arr = []
 
-    print(jobs_file)
+        for job in jobs_file:
+            jobs_arr.append(job)
 
-    jobs_arr = []
-
-    for job in jobs_file:
-        jobs_arr.append(job)
-
-    return jobs_arr
+        return jobs_arr
 
 
 def get_unique_job_types(path: str) -> List[str]:
-    """Checks all different job types and returns a list of them
+    jobs = read(path)
 
-    Must call `read`
+    types_list = ()
 
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
+    for job in jobs:
+        types_list.add(job["job_type"])
+    
+    return types_list
 
-    Returns
-    -------
-    list
-        List of unique job types
-    """
-    raise NotImplementedError
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
