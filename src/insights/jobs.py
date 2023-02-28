@@ -5,7 +5,7 @@ import csv
 
 @lru_cache
 def read(path: str) -> List[Dict]:
-   with open(path, encoding="utf-8") as file:
+    with open(path, encoding="utf-8") as file:
 
     jobs_file = csv.DictReader(file)
 
@@ -15,7 +15,7 @@ def read(path: str) -> List[Dict]:
 
     for job in jobs_file:
         jobs_arr.append(job)
-    
+
     return jobs_arr
 
 
