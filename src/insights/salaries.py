@@ -43,7 +43,7 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
 
         return salary_range
 
-    except ValueError:
+    except Exception:
         raise ValueError
 
 
